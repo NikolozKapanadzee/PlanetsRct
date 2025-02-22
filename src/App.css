@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Antonio";
+  src: url("./assets/fonts/Antonio\,Barlow\,DM_Sans\,DM_Serif_Display\,Inter\,etc.zip");
+}
+body {
+  background-image: url("./assets/images/background-stars.svg");
+  background-color: #070724;
+}
+@theme {
+  --font-antonio: "Antonio";
+  --font-spartan: "Spartan";
+}
