@@ -5,9 +5,9 @@ function Header() {
   return (
     <>
       <div className="header flex flex-col">
-        <div className="flex justify-between items-center pt-4 pl-6 pr-6 md:flex-col">
+        <div className="flex justify-between items-center pt-4 pl-6 pr-6 md:flex-col lg:flex-row lg:items-center ">
           <Link to={`/planets/Mercury`}>
-            <h2 className="text-[white] text-[28px] not-italic font-normal tracking-[-1.05px] font-antonio text-2xl leading-normal md:mb-[39px]">
+            <h2 className="text-[white] text-[28px] not-italic font-normal tracking-[-1.05px] font-antonio text-2xl leading-normal md:mb-[39px] lg:mb-0 ">
               THE PLANETS
             </h2>
           </Link>

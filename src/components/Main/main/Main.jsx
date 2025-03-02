@@ -74,7 +74,7 @@ function Main() {
     }
     return(
         <>
-        <div className="main flex flex-col items-center">
+        <div className="main flex flex-col items-center lg:flex-row lg:justify-around lg:mt-[126px]  ">
             <div className="buttons_div flex flex-col items-center pt-[20px] w-full md:hidden ">
             <div className="buttons flex items-center w-full justify-between pr-[24px] pl-[24px] md:flex-col gap-[16px]">
             <button onClick={() => SelectOverview("overview")}
@@ -98,7 +98,7 @@ function Main() {
               <img className="w-[110px] absolute top-[70%] " src={planetGeologyImages[NewData.name]}/>)}
               </div>
 
-              <div className="buttons_content_div hidden md:flex gap-[69px] ">
+              <div className="buttons_content_div hidden md:flex gap-[69px] lg:flex-col lg:mb-[87px]">
               <div className="content_div flex flex-col items-center md:items-start">
                 <h1 className="text-[#fff] font-antonio uppercase leading-normal text-[40px] not-italic " >{NewData.name}</h1>
                 <p className="font-spartan text-[#fff] text-center text-[11px] not-italic leading-[22px] w-[327px] mt-[16px] md:text-start ">{NewData.overview.content}</p>
@@ -113,8 +113,8 @@ function Main() {
                 </Link>
                 </div>
             </div>
-            <div className="buttons_div flex flex-col items-center pt-[20px] w-[281px]">
-            <div className="buttons flex items-center w-full justify-between pr-[24px] pl-[24px] md:flex-col gap-[16px]">
+            <div className="buttons_div flex flex-col items-center pt-[20px] w-[281px] ">
+            <div className="buttons flex items-center w-full justify-between pr-[24px] pl-[24px] md:flex-col gap-[16px] lg:w-[350px] ">
             <button onClick={() => SelectOverview("overview")}
              className="font-spartan text-[#FFF] uppercase cursor-pointer md:border-solid md:border-2 border-white w-full max-w-[280px] h-[40px]">OVERVIEW</button>
              <button onClick={() => SelectOverview("structure")}
