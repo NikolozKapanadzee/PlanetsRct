@@ -75,13 +75,17 @@ function Main() {
     return(
         <>
         <div className="main flex flex-col items-center">
-            <div className="buttons_div flex flex-col items-center pt-[20px] w-full">
-                <div className="buttons flex items-center w-full justify-between pr-[24px] pl-[24px] ">
-                    <button  onClick={() => SelectOverview("overview")} className="font-spartan text-[#FFF] uppercase cursor-pointer" >OVERVIEW</button>
-                    <button  onClick={() => SelectOverview("structure")}  className="font-spartan text-[#FFF] uppercase cursor-pointer ">Structure</button>
-                    <button  onClick={() => SelectOverview("surface")}  className="font-spartan text-[#FFF]  uppercase cursor-pointer ">Surface</button>
-                </div>
-                <div className="w-full h-[1px] border border-[#fff] border-solid opacity-[0.2] mt-4 " ></div>
+            <div className="buttons_div flex flex-col items-center pt-[20px] w-full md:hidden ">
+            <div className="buttons flex items-center w-full justify-between pr-[24px] pl-[24px] md:flex-col gap-[16px]">
+            <button onClick={() => SelectOverview("overview")}
+             className="font-spartan text-[#FFF] uppercase cursor-pointer md:border-solid md:border-2 border-white w-full max-w-[280px] h-[40px]">OVERVIEW</button>
+             <button onClick={() => SelectOverview("structure")}
+             className="font-spartan text-[#FFF] uppercase cursor-pointer md:border-solid md:border-2 border-white w-full max-w-[280px] h-[40px]">Structure</button>
+            <button onClick={() => SelectOverview("surface")}
+             className="font-spartan text-[#FFF] uppercase cursor-pointer md:border-solid md:border-2 border-white w-full max-w-[280px] h-[40px]">Surface</button>
+        </div>
+
+                <div className="w-full h-[1px] border border-[#fff] border-solid opacity-[0.2] mt-4 md:hidden " ></div>
             </div>
             <div className="image_div mt-[95px] mb-[98px] flex flex-col items-center justify-center relative w-full max-w-[224px] max-h-[224px] ">
              {(isSelected === "overview" || isSelected === "surface") && (
@@ -93,9 +97,38 @@ function Main() {
              {isSelected === "surface" && (
               <img className="w-[110px] absolute top-[70%] " src={planetGeologyImages[NewData.name]}/>)}
               </div>
-            <div className="content_div flex flex-col items-center">
+
+              <div className="buttons_content_div hidden md:flex gap-[69px] ">
+              <div className="content_div flex flex-col items-center md:items-start">
                 <h1 className="text-[#fff] font-antonio uppercase leading-normal text-[40px] not-italic " >{NewData.name}</h1>
-                <p className="font-spartan text-[#fff] text-center text-[11px] not-italic leading-[22px] w-[327px] mt-[16px] ">{NewData.overview.content}</p>
+                <p className="font-spartan text-[#fff] text-center text-[11px] not-italic leading-[22px] w-[327px] mt-[16px] md:text-start ">{NewData.overview.content}</p>
+                <div className="source_div flex gap-[2px] items-center mt-[32px] ">
+                <p className="text-[#fff] opacity-[0.5] font-spartan font-normal text-[12px] tracking-wider " >Source:
+                    <Link to={NewData.overview.source} >
+                     <span className="text-[#fff] font-bold leading-[25px] underline cursor-pointer font-spartan ml-[5px] " >Wikipedia</span>
+                    </Link>
+                </p>
+                <Link to={NewData.overview.source} >
+                <img  className="cursor-pointer" src={LinkArrow}/>
+                </Link>
+                </div>
+            </div>
+            <div className="buttons_div flex flex-col items-center pt-[20px] w-[281px]">
+            <div className="buttons flex items-center w-full justify-between pr-[24px] pl-[24px] md:flex-col gap-[16px]">
+            <button onClick={() => SelectOverview("overview")}
+             className="font-spartan text-[#FFF] uppercase cursor-pointer md:border-solid md:border-2 border-white w-full max-w-[280px] h-[40px]">OVERVIEW</button>
+             <button onClick={() => SelectOverview("structure")}
+             className="font-spartan text-[#FFF] uppercase cursor-pointer md:border-solid md:border-2 border-white w-full max-w-[280px] h-[40px]">Structure</button>
+            <button onClick={() => SelectOverview("surface")}
+             className="font-spartan text-[#FFF] uppercase cursor-pointer md:border-solid md:border-2 border-white w-full max-w-[280px] h-[40px]">Surface</button>
+        </div>
+
+                <div className="w-full h-[1px] border border-[#fff] border-solid opacity-[0.2] mt-4 md:hidden " ></div>
+            </div>
+              </div>
+            <div className="content_div flex flex-col items-center md:hidden">
+                <h1 className="text-[#fff] font-antonio uppercase leading-normal text-[40px] not-italic " >{NewData.name}</h1>
+                <p className="font-spartan text-[#fff] text-center text-[11px] not-italic leading-[22px] w-[327px] mt-[16px] md:text-start ">{NewData.overview.content}</p>
                 <div className="source_div flex gap-[2px] items-center mt-[32px] ">
                 <p className="text-[#fff] opacity-[0.5] font-spartan font-normal text-[12px] tracking-wider " >Source:
                     <Link to={NewData.overview.source} >
